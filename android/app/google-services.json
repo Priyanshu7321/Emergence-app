@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "206205698312",
+    "firebase_url": "https://app-projects-ad5fa-default-rtdb.firebaseio.com",
+    "project_id": "app-projects-ad5fa",
+    "storage_bucket": "app-projects-ad5fa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206205698312:android:99a01c2742710195816cbd",
+        "android_client_info": {
+          "package_name": "com.example.emergence"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdSLIQ-YlYGJudp1xkSFuWGtqY4q48E7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "locations": {
+      ".read": true,
+      "$uid": {
+        ".write": true
+      }
+    }
+  }
+}

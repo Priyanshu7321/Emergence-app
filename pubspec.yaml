@@ -1,0 +1,122 @@
+name: emergence
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management
+  flutter_riverpod: ^3.4.3
+  riverpod_annotation: ^4.0.7
+
+  # Navigation
+  go_router: ^18.0.1
+
+  # Firebase
+  firebase_core: ^4.2.1
+  firebase_auth: ^6.7.0
+  firebase_database: ^12.6.0
+
+  # Location
+  geolocator: ^14.0.3
+
+  # Map
+  maplibre_gl: ^0.27.1
+
+  # Network
+  dio: ^5.7.0
+  pretty_dio_logger: ^1.4.0
+  connectivity_plus: ^6.1.1
+
+  # Serialization
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.12.0
+
+  # Local storage
+  drift: ^2.22.0
+  drift_flutter: ^0.3.1
+  path_provider: ^2.1.5
+
+  # Utilities
+  google_fonts: ^6.2.1
+  uuid: ^4.5.1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Integration Testing
+  integration_test:
+    sdk: flutter
+
+  # Linting
+  flutter_lints: ^6.0.0
+
+  # Riverpod Code Generation
+  riverpod_generator: ^4.0.8
+
+  # Code Generation
+  build_runner: ^2.5.4
+  freezed: ^4.0.0
+  json_serializable: ^6.9.5
+
+  # Drift Code Generation
+  drift_dev: ^2.25.0
+
+  # Testing
+  mocktail: ^1.0.4
+
+
+flutter:
+  uses-material-design: true
+
+One change from your original file is go_router: the current stable release is 18.0.1, rather than the older 14.6.2.
+  
+  Your resulting architecture
+  abc
+  │
+  ├── Riverpod 3
+  │   ├── flutter_riverpod
+  │   ├── riverpod_annotation
+  │   └── riverpod_generator
+  │
+  ├── Navigation
+  │   └── go_router
+  │
+  ├── Firebase
+  │   ├── firebase_core
+  │   └── firebase_database
+  │
+  ├── API
+  │   ├── dio
+  │   ├── pretty_dio_logger
+  │   └── connectivity_plus
+  │
+  ├── Maps
+  │   └── maplibre_gl
+  │
+  ├── Models
+  │   ├── freezed
+  │   └── json_serializable
+  │
+  └── Local Database
+  └── Drift
+
+After creating the project, run:
+
+  flutter pub get
+
+And when you start using Riverpod/Freezed/JSON generation:
+
+  dart run build_runner build --delete-conflicting-outputs
+
+One caveat: firebase_core, firebase_database, and maplibre_gl also require platform-specific setup beyond pubspec.yaml—especially Firebase configuration files and MapLibre's map style/tile source.
